@@ -1,0 +1,36 @@
+
+
+server:
+  port: 8080
+
+
+
+
+
+spring:
+  application:
+    name: template-backend
+
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/template
+#    username: postgres
+#    password: root
+#    driver-class-name: org.postgresql.Driver
+  datasource:
+    url: ${dbUrl}
+    username: ${dbUsername}
+    password: ${dbPassword}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  jwtSecret: ${jwtSecret}
+
+app:
+  cors:
+    allowed-origins: ${allowedOrigins}
+
+
