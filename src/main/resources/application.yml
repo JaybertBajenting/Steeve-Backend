@@ -6,21 +6,20 @@ server:
 
 
 
-
 spring:
   application:
     name: template-backend
 
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/template
-#    username: postgres
-#    password: root
-#    driver-class-name: org.postgresql.Driver
   datasource:
-    url: ${dbUrl}
-    username: ${dbUsername}
-    password: ${dbPassword}
+    url: jdbc:postgresql://localhost:5432/template
+    username: postgres
+    password: root
     driver-class-name: org.postgresql.Driver
+#  datasource:
+#    url: ${dbUrl}
+#    username: ${dbUsername}
+#    password: ${dbPassword}
+#    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
@@ -28,6 +27,12 @@ spring:
     show-sql: true
 
   jwtSecret: ${jwtSecret}
+
+  digitalocean:
+    secretKey: ${secretKey}
+    accessKey: ${accessKey}
+    region: ${region}
+    bucketName: ${bucketName}
 
 app:
   cors:
